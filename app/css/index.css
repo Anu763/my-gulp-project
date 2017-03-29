@@ -520,3 +520,6 @@ input[type="submit"] {
 li > a {
   display: block;
   cursor: pointer; }
+
+body {
+  background-color: red; }

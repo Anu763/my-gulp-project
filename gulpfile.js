@@ -1,23 +1,33 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');// Requires the gulp-sass plugin
+var browserSync = require('browser-sync').create();
+
+
 
 
 gulp.task('hello', function() {
     console.log('Hello World..!');
 });
 
-
-gulp.task('sass', function(){
-    return gulp.src('app/scss/index.scss')
-        .pipe(sass()) // Converts Sass to CSS with gulp-sass
-        .pipe(gulp.dest('app/css'))
+gulp.task('sass', function() {
+return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
+    .pipe(sass())
+    .pipe(gulp.dest('app/css'))
+    .pipe(browserSync.reload({
+        stream: true
+    }))
 });
 
-// Gulp watch syntax
-gulp.watch('app/scss/**/*.scss', ['sass']);
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: {
+        baseDir: 'app'
+        },
+    })
+});
 
-
-gulp.task('watch', function(){
+gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('app/scss/**/*.scss', ['sass']);
-  // Other watchers
-})
+  gulp.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/js/**/*.js', browserSync.reload);
+});
