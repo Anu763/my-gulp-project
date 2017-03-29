@@ -1,0 +1,65 @@
+
+/* Placeholder */
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #b3d4fc;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #b3d4fc;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #b3d4fc;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #b3d4fc;
+}
+
+/* Selection */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+*::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+*::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* Outline */
+button:focus {
+    outline: 0;
+}
+
+/* Image */
+img {
+    display: block;
+    width: 100%;
+}
+
+img::selection {
+  background: transparent;
+  text-shadow: none;
+}
+
+/* Input and button */
+button,
+input[type="submit"] {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Enhance */
+li > a {
+
+    display: block;
+    cursor: pointer;
+}
