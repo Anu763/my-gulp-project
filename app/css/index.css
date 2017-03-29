@@ -521,5 +521,25 @@ li > a {
   display: block;
   cursor: pointer; }
 
-body {
-  background-color: red; }
+.header {
+  width: 100%;
+  display: inline-block; }
+
+.navigation {
+  width: 100%;
+  display: inline-block; }
+  .navigation li {
+    display: inline-block;
+    padding: 10px 40px;
+    margin: 0; }
+
+.mob-menu {
+  display: none; }
+
+.page-wraper {
+  width: 100%;
+  display: inline-block; }
+
+.page-center {
+  width: 1000px;
+  margin: 0 auto; }
